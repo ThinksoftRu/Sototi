@@ -1,0 +1,112 @@
+﻿body {
+  background: none repeat scroll 0 0 #F4F5F6;
+  color: #777777;
+  font-family: Arial, Tahoma, Verdana, sans-serif;
+  font-size: 12px;
+  line-height: 120%;
+  min-width: 1000px;
+}
+.header
+{
+	font-size: 18px;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 13px;
+	padding-top: 3px;
+}
+.header .Sototi {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: normal;
+  left: 20px;
+}
+html,
+body,
+ul,
+li,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+.header-box {
+  background: url("images/bg-header.png") repeat-x scroll 0 0 #5780b3;
+  border-bottom: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  height: 35px;
+}
+.footer-box {
+  color: #999999;
+  font-size: 11px;
+  padding: 0 10px 10px 15px;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+.footer {
+  padding: 3px 0 7px 200px;
+  position: relative;
+  text-align: right;
+}
+.tiptip .select {
+  border-style: solid;
+}
+
+.wrapper {
+  
+  background: url("images/bg-page.png") repeat#f9fbfd;
+  
+}
+.middle {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  width: 450px;
+  z-index: 0;
+}
+.middle:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+.container {
+  background: none repeat scroll 0 0 #F4F5F6;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3) inset, 0 1px 0 rgba(255, 255, 255, 0.3);
+  margin: 0 0 50px;
+}
+.error {
+  color: red;
+}
+.content {
+  color: #666666;
+  padding: 5px 25px 25px;
+  text-align: center;
+}
+.content-box .logo {
+  background: url("images/logo.png") no-repeat scroll 50% 50% transparent;
+  height: 180px;
+  margin: 0 0 25px;
+}
+.blueButton {
+  background-color: steelblue;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Tahoma;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+}
+.classname:hover {
+  background-color: steelblue;
+}
+.classname:active {
+  position: relative;
+  top: 1px;
+}

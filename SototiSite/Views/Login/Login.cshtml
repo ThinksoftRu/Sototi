@@ -1,0 +1,57 @@
+﻿@using SototiCore.Data.Common
+@model UserState
+@{Page.Title = "Вход";
+}
+
+<style>
+	input {
+		width: 350px;
+		height: 30px;
+		text-align: center;
+		border-width: 0.05em;
+		border-color: lightgray;
+		border-style: solid;
+	}
+
+	input,label {
+		font-family: Arial, Tahoma;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+
+	#loginButton:hover {
+		opacity: 0.8;
+	}
+</style>
+
+@using (Html.BeginForm("Login", "Login"))
+{
+	<div class="middle">
+		<div class="logo"></div>
+		<div class="container">
+			<div style="text-align: center" class="content">
+				<br/><br/><img style="vertical-align: bottom; " src="~/Content/Images/login/User.png"/>
+				<input name="username" style="width: 330px;margin-right: 20px" type="text"/><br/><br/>
+				@if (Model != UserState.DoubleAutorization)
+				{
+					<img  style="vertical-align: bottom" src="~/Content/Images/login/Key.png"/>
+					<input  name="password" style="width: 330px; margin-right: 20px" type="password"/>
+					<br/>
+					<br/>
+				}
+				@if (Model == UserState.DoubleAutorization)
+				{
+					<img  style="vertical-align: bottom" src="~/Content/Images/login/lock.png"/>
+					<input  name="code" style="width: 330px; margin-right: 20px" type="text" />
+					<br/><br/>
+				}
+				@if (ViewData["Error"] != null)
+				{
+					<label style="color: red;display: block">@ViewData["Error"]</label><br/>
+				}
+
+				<input id="loginButton" style="width: 120px;font-size: 14px;cursor: pointer; background: lightgray;margin-left: 20px" type="submit" value="Войти" /><br/><br/>
+			</div>
+		</div>
+	</div>
+}

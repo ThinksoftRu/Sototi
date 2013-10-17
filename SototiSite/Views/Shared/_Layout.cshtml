@@ -1,0 +1,59 @@
+﻿
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset=utf-8/>
+		<title>@Page.Title</title>
+		
+		<link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="~/Content/kendo.common.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="~/Content/kendo.metro.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="~/Content/toastr.min.css" media="screen" />
+		
+		
+		@{ var lang = @Request.Cookies["lang"] == null ? "ru" : @Request.Cookies["lang"].Value; }
+
+		<script type="text/javascript" src="~/Scripts/jquery-2.0.2.min.js"></script>
+		<script type="text/javascript" src="~/Scripts/kendo.web.js"></script>		
+		
+		<script type="text/javascript" src="@Url.Content("~/Scripts/localization/kendo.web."+@lang+".js")"></script>
+		<script type="text/javascript"  charset="utf-8" src="@Url.Content("~/Scripts/localization/kendo.culture."+@lang+".js")"></script>
+		
+		<script type="text/javascript" src="~/Scripts/toastr.min.js"></script>
+		<script type="text/javascript" src="~/Scripts/init.js"></script>
+		
+		<script type="text/javascript">
+			
+			kendo.culture("@(lang)"); // Локализация Кендо делается до загрузки документаЫ
+			$(document).ready(function () {
+				LayoutInit("@(lang)");
+			});
+
+		</script>
+
+	</head>
+	<body class="wrapper">
+		
+		<div class="header-box">
+			<div class="header">
+				@if (Request.IsAuthenticated)
+				{
+					Html.RenderAction("BaseInfo", "User", new { area = "" });
+				}
+				else
+				{
+					<h1 class="Sototi" style="line-height: 35px;margin-left: 10px">
+						Sototi
+					</h1>
+				}
+			</div>
+		</div>
+		<div class="content-box">
+			<div id="ajax-loader" style="margin: 0;padding: 0;height: 3px; background: lightcoral ;opacity: 0">
+			</div>
+			<div>
+				@this.RenderBody()
+			</div>
+		</div>
+	</body>
+</html>

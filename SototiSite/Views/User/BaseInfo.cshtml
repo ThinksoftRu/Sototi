@@ -1,0 +1,38 @@
+﻿@{
+	Layout = null;
+}
+<style>
+	.lang {
+		opacity: 0.5;
+		cursor: pointer;
+	}
+	.lang:hover {
+		opacity: 1;
+	}
+</style>
+<a href="/">
+	<img  src="/Content/Images/home.png" style="border: 0; float: left; margin-right: 15px" /> 
+</a>  
+
+<div style="border: 0;float: right;margin-right: 5px;margin-left: 5px;margin-top: 5px">
+
+	<img class="lang" alt="ru"  src="/Content/Images/flags/ru.png" />
+	<img class="lang" alt="en"  src="/Content/Images/flags/en.png"/> 
+
+</div>
+
+
+<a href="@Url.Action("Logout", "Login")">
+	<img   src="/Content/Images/logout.png" style="border: 0; float: left;float: right" /> 
+</a>  
+
+
+<a href="@Url.Action("UserSettings")">
+	<img   src="/Content/Images/settings.png" style="border: 0; float: left;margin-right: 30px;float: right" /> 
+</a>  
+<a href="@Url.Action("UserProfile")">
+	<img   src="/Content/Images/user.png" style="border: 0; float: left;float: right" /> 
+</a>  
+
+<span style="vertical-align: bottom;padding-top: 5px;float: right">@Model</span>
+
